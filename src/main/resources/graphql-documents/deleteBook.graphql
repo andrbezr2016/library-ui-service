@@ -1,0 +1,16 @@
+mutation deleteBook($id: ID!) {
+    deleteBook(id: $id) {
+        id
+        title
+        description
+        author
+        publisher
+        yearPublished
+        isbn
+        pages
+        tags {
+            id
+            name
+        }
+    }
+}
