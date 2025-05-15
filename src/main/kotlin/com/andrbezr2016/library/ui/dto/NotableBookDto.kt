@@ -4,13 +4,12 @@ import com.andrbezr2016.library.ui.model.ReadingStatus
 import java.time.LocalDateTime
 import java.util.*
 
-class NotableBookDto {
-
-    var id: UUID? = null
-    var bookDto: BookDto? = null
-    var score: Int? = null
-    var status: ReadingStatus? = null
-    var createdAt: LocalDateTime? = null
-    var modifiedAt: LocalDateTime? = null
-    var notes: MutableList<NoteDto?>? = null
-}
+data class NotableBookDto(
+    var id: UUID,
+    var bookDto: BookDto,
+    var score: Int,
+    var status: ReadingStatus,
+    var createdAt: LocalDateTime,
+    var modifiedAt: LocalDateTime,
+    var notes: MutableList<NoteDto>
+)
