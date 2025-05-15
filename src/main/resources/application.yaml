@@ -1,10 +1,10 @@
 server:
-  port: ${SERVICE_PORT:8083}
+  port: ${SERVICE_PORT:8080}
 spring:
   name: ${SERVICE_NAME:library-ui-service}
 recommendation-service:
   rest:
-    url: ${RECOMMENDATION_SERVICE_REST_URL:http://localhost:8082/graphql}
+    url: ${RECOMMENDATION_SERVICE_REST_URL:http://localhost:8082}
 catalog-service:
   graphql:
     url: ${CATALOG_SERVICE_GRAPHQL_URL:http://localhost:8081/graphql}

@@ -4,6 +4,6 @@ import java.util.*
 
 class TagDto {
 
-    private val id: UUID? = null
-    private val name: String? = null
+    var id: UUID? = null
+    var name: String? = null
 }

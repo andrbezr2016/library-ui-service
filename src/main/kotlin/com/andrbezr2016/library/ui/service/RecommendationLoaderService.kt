@@ -12,7 +12,7 @@ class RecommendationLoaderService(val webClient: WebClient) {
 
     fun addNotableBook(notableBookInput: NotableBookInput?): NotableBookDto {
         return webClient.post()
-            .uri("/notableBooks/add")
+            .uri("/reading/notableBooks/add")
             .body(BodyInserters.fromValue(notableBookInput!!))
             .retrieve()
             .bodyToMono<NotableBookDto>().blockOptional().orElseThrow()
@@ -20,7 +20,7 @@ class RecommendationLoaderService(val webClient: WebClient) {
 
     fun updateNotableBook(notableBookId: UUID?, notableBookUpdate: NotableBookUpdate?): NotableBookDto {
         return webClient.patch()
-            .uri("/notableBooks/{notableBookId}/update", notableBookId)
+            .uri("/reading/notableBooks/{notableBookId}/update", notableBookId)
             .body(BodyInserters.fromValue(notableBookUpdate!!))
             .retrieve()
             .bodyToMono<NotableBookDto>().blockOptional().orElseThrow()
@@ -28,28 +28,28 @@ class RecommendationLoaderService(val webClient: WebClient) {
 
     fun deleteNotableBook(notableBookId: UUID?): NotableBookDto {
         return webClient.delete()
-            .uri("/notableBooks/{notableBookId}/delete", notableBookId)
+            .uri("/reading/notableBooks/{notableBookId}/delete", notableBookId)
             .retrieve()
             .bodyToMono<NotableBookDto>().blockOptional().orElseThrow()
     }
 
     fun getNotableBook(notableBookId: UUID?): NotableBookDto {
         return webClient.get()
-            .uri("/notableBooks/{notableBookId}", notableBookId)
+            .uri("/reading/notableBooks/{notableBookId}", notableBookId)
             .retrieve()
             .bodyToMono<NotableBookDto>().blockOptional().orElseThrow()
     }
 
     fun getNotableBooks(): MutableCollection<NotableBookDto?> {
         return webClient.get()
-            .uri("/notableBooks/all")
+            .uri("/reading/notableBooks/all")
             .retrieve()
             .bodyToMono<MutableCollection<NotableBookDto?>>().blockOptional().orElseThrow()
     }
 
     fun addNote(notableBookId: UUID?, noteInput: NoteInput?): NoteDto {
         return webClient.post()
-            .uri("/notableBooks/{notableBookId}/notes/add", notableBookId)
+            .uri("/reading/notableBooks/{notableBookId}/notes/add", notableBookId)
             .body(BodyInserters.fromValue(noteInput!!))
             .retrieve()
             .bodyToMono<NoteDto>().blockOptional().orElseThrow()
@@ -57,7 +57,7 @@ class RecommendationLoaderService(val webClient: WebClient) {
 
     fun updateNote(noteId: UUID?, noteUpdate: NoteUpdate?): NoteDto {
         return webClient.patch()
-            .uri("/notableBooks/notes/{noteId}/update", noteId)
+            .uri("/reading/notableBooks/notes/{noteId}/update", noteId)
             .body(BodyInserters.fromValue(noteUpdate!!))
             .retrieve()
             .bodyToMono<NoteDto>().blockOptional().orElseThrow()
@@ -65,14 +65,14 @@ class RecommendationLoaderService(val webClient: WebClient) {
 
     fun deleteNote(noteId: UUID?): NoteDto {
         return webClient.delete()
-            .uri("/notableBooks/notes/{noteId}/delete", noteId)
+            .uri("/reading/notableBooks/notes/{noteId}/delete", noteId)
             .retrieve()
             .bodyToMono<NoteDto>().blockOptional().orElseThrow()
     }
 
     fun getBooksToRead(): MutableCollection<BookDto?> {
         return webClient.get()
-            .uri("/books/getBooksToRead")
+            .uri("/reading/books/getBooksToRead")
             .retrieve()
             .bodyToMono<MutableCollection<BookDto?>>().blockOptional().orElseThrow()
     }

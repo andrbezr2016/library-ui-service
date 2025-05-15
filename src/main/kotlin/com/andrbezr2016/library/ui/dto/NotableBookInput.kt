@@ -5,7 +5,7 @@ import java.util.*
 
 class NotableBookInput {
 
-    private val bookId: UUID? = null
-    private val score: Int? = null
-    private val status: ReadingStatus? = null
+    var bookId: UUID? = null
+    var score: Int? = null
+    var status: ReadingStatus? = null
 }

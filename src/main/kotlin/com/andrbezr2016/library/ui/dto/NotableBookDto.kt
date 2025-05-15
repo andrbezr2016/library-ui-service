@@ -6,11 +6,11 @@ import java.util.*
 
 class NotableBookDto {
 
-    private val id: UUID? = null
-    private val bookDto: BookDto? = null
-    private val score: Int? = null
-    private val status: ReadingStatus? = null
-    private val createdAt: LocalDateTime? = null
-    private val modifiedAt: LocalDateTime? = null
-    private val notes: MutableList<NoteDto?>? = null
+    var id: UUID? = null
+    var bookDto: BookDto? = null
+    var score: Int? = null
+    var status: ReadingStatus? = null
+    var createdAt: LocalDateTime? = null
+    var modifiedAt: LocalDateTime? = null
+    var notes: MutableList<NoteDto?>? = null
 }

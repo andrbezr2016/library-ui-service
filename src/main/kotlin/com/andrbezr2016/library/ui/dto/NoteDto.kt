@@ -5,9 +5,9 @@ import java.util.*
 
 class NoteDto {
 
-    private val id: UUID? = null
-    private val notableBookId: UUID? = null
-    private val content: String? = null
-    private val createdAt: LocalDateTime? = null
-    private val modifiedAt: LocalDateTime? = null
+    var id: UUID? = null
+    var notableBookId: UUID? = null
+    var content: String? = null
+    var createdAt: LocalDateTime? = null
+    var modifiedAt: LocalDateTime? = null
 }
